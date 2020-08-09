@@ -1,0 +1,2 @@
+[0808/130202.064:ERROR:crash_report_database_win.cc(558)] GetFileAttributes C:\Users\gbandal\AppData\Local\Temp\scoped_dir15340_1874180327\Crashpad: The system cannot find the file specified. (0x2)
+[0808/133743.812:ERROR:crash_report_database_win.cc(558)] GetFileAttributes C:\Users\gbandal\AppData\Local\Temp\scoped_dir16636_1083718205\Crashpad: The system cannot find the file specified. (0x2)
