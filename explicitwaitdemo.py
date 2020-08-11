@@ -2,11 +2,12 @@
 from selenium import webdriver
 import time
 
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+
 driver=webdriver.Chrome(executable_path="C:\\chromedriver.exe")
-driver.implicitly_wait(5)
-#wait until 5 sec. if the object is not displayed, globally applied to all the steps in the test cases
-#therefore implicit wait also called global wait, but if the appln loads in 1.5 sec
-# it will not waste remaining 3.5 sec.
 driver.get("https://rahulshettyacademy.com/seleniumPractise/")
 
 # tagname.classname
@@ -26,10 +27,13 @@ for button in buttons:
 driver.find_element_by_css_selector("img[alt='Cart']").click()
 # now click on the button proceed to checkout
 driver.find_element_by_xpath("//button[text()='PROCEED TO CHECKOUT']").click()
+wait=WebDriverWait(driver,5)
+wait.until(EC.presence_of_element_located((By.CLASS_NAME,"promocode")))
 #Enter promo code to get discount
 #test failed, not able to enter promocode
 driver.find_element_by_class_name("promocode").send_keys("rahulshettyacademy")
 #apply button, for css .classname
-driver.find_element_by_css_selector(".promoBtn").click()
+driver.find_element_by_css_selector(".promobtn").click()
+wait.until(EC.presence_of_element_located((By.CSS_SELECTOR,"span.promoinfo")))
 print(driver.find_element_by_css_selector("span.promoinfo").text)
 
