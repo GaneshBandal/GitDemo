@@ -1,0 +1,4 @@
+2020-08-12 21:23:15,260 :INFO :pytestsdemo.test_logging :Information Statement
+2020-08-12 21:23:15,261 :WARNING :pytestsdemo.test_logging :Warning Statement
+2020-08-12 21:23:15,261 :ERROR :pytestsdemo.test_logging :Error Statement
+2020-08-12 21:23:15,262 :CRITICAL :pytestsdemo.test_logging :Critical Statement
